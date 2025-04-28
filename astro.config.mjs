@@ -9,12 +9,13 @@ export default defineConfig({
 		starlight({
 			title: 'My Docs',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			favicon: '/favicon.ico',
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Projects',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Laser Vs 3D Printing Gridfinity', slug: 'projects/laser_vs_3dprint_gridfinity' },
 					],
 				},
 				{

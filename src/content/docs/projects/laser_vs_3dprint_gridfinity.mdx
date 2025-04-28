@@ -1,0 +1,103 @@
+---
+title: Laser Versus 3D Printing Gridfinity Boxes
+description: An evaluation of using laser versus 3d printing of Gridfinity
+---
+import { Picture } from 'astro:assets';
+import baseplate_plan from '../../../assets/gridspec-baseplate-plan.png'
+import laser_baseplate_plan from '../../../assets/gridspec-laser-baseplate-plan.png'
+import baseplate_profile from '../../../assets/gridspec-baseplate-profile.png'
+import boxes_and_bases from '../../../assets/boxes_and_bases.jpg'
+import base_with_pads from '../../../assets/base_with_pads.png'
+
+
+[Gridfinity](https://gridfinity.xyz/) is a modular storage system developed by [Zack Feedman.](https://www.youtube.com/c/ZackFreedman).
+
+The [specification](https://gridfinity.xyz/specification/) was intended for 3D printers. But it is also possible to be essentailly Gridfinity compatible using a laser cutter.
+
+<Picture src={boxes_and_bases} formats={['webp']} alt="3D Printed and Laser Cut Gridfinity Boxes" height="200"/>
+
+Laser cut SVGs are generated using [Boxes.py](https://boxes.hackerspace-bamberg.de/).
+
+- Generator for [2x2 Base](https://boxes.hackerspace-bamberg.de/GridfinityBase?DoveTail_angle=40&DoveTail_depth=0.3&DoveTail_radius=0.05&DoveTail_size=3&FingerJoint_style=rectangular&FingerJoint_surroundingspaces=2.0&FingerJoint_bottom_lip=0.0&FingerJoint_edge_width=1.0&FingerJoint_extra_length=0.0&FingerJoint_finger=4.0&FingerJoint_play=0.0&FingerJoint_space=4.0&FingerJoint_width=1.0&Lid_handle=none&Lid_style=none&Lid_handle_height=8.0&Lid_height=4.0&Lid_play=0.1&size_x=0&size_y=0&x=2&y=2&h=0&m=0.5&bottom_edge=F&panel_edge=D&pitch=42&opening=38&radius=1.6&cut_pads=0&cut_pads_mag_diameter=6.5&cut_pads_mag_offset=7.75&pad_radius=0.8&panel_x=0&panel_y=0&thickness=3.0&format=svg&tabs=0.0&qr_code=0&debug=0&labels=0&reference=0&inner_corners=loop&burn=0.1&language=en&render=0)
+- Generator for [2x2x6u Tray](https://boxes.hackerspace-bamberg.de/GridfinityTrayLayout?FingerJoint_style=rectangular&FingerJoint_surroundingspaces=2.0&FingerJoint_bottom_lip=0.0&FingerJoint_edge_width=1.0&FingerJoint_extra_length=0.0&FingerJoint_finger=2.0&FingerJoint_play=0.0&FingerJoint_space=2.0&FingerJoint_width=1.0&Lid_handle=none&Lid_style=none&Lid_handle_height=8.0&Lid_height=4.0&Lid_play=0.1&h=6u&hi=0&nx=2&ny=2&countx=2&county=2&margin=0.75&stacking=0&gen_pads=0&gen_pads=1&pad_radius=0.8&cut_pads_mag_diameter=6.5&cut_pads_mag_offset=7.75&layout=+%2C%3E+41.625mm%0D%0A+%7C+%2C%3E+41.625mm%0D%0A%2B-%2B-%2B%0D%0A%7C+%7C+%7C++41.625mm%0D%0A%2B-%2B-%2B%0D%0A%7C+%7C+%7C++41.625mm%0D%0A%2B-%2B-%2B%0D%0A&thickness=3.0&format=svg&tabs=0.0&qr_code=0&debug=0&labels=0&labels=1&reference=0&inner_corners=loop&burn=0.1&language=en&render=0)
+
+3D boxes were generated using [Gridfinity Generator](https://gridfinitygenerator.com) and [Perplexity Labs Generator](https://gridfinity.perplexinglabs.com/).
+
+- Settings for 2x2 Base:
+    - X: 2
+    - Y: 2
+    - Base magnets: off
+    - Screw holds: off
+    - Connectable: off
+    
+- Settings for 2x2 Box:
+    - Grid rows: 2
+    - Grid columns: 2
+    - Height: 6
+    - Stacking lip: On
+    - Magnet style: Magnet holes
+    - Bin Style: Standard
+    - Sub-bin rows: 2
+    - Sub-bin columns: 2
+    - Finger scoop: 0
+    - Label tab: None
+
+## Materials
+
+For this test the following materials were used:
+
+- [12" x 12" x 1/8 Inch Basswood Sheets](https://www.amazon.com/Basswood-MAPRIAL-Unfinished-Engraving-Ornaments/dp/B0DNF2JK1W), currently $30 for a 24 pack.
+- [PLA](https://www.amazon.com/OVERTURE-Filament-Consumables-Dimensional-Accuracy/dp/B07PGY2JP), current $15 for 1kg.
+
+Thus the price for 1 square inch (`in^2`) of plywood is `(($30 / 24 ) / 144 in^2) = $0.00868 / in^2` and the price for PLA is `($15 / 1000 grams = $0.015 / gram`.
+
+## Results
+
+| Item                    | Method                              | Time    | Material | Cost  |
+| ----------------------- | ----------------------------------- | ------- | -------- | ----- |
+| 2x2 Base                | Laser Cut (Snapmaker 2.0 with 10W)  | 4m      | 11 in^2  | $0.10 |
+| 2x2 Base                | 3D Print (Qidi Plus 4)              | 16m     | 6g       | $0.09 |
+| 2x2 Box with Dividers   | Laser Cut (Snapmaker 2.0 with 10W)  | 17m     | 70 in^2  | $0.61 |
+| 2x2x6u Box with Dividers| 3D Print (Qidi Plus 4)              | 1h35m   | 52g      | $0.78 |
+
+As expected, the main benefit of using a laser cutter is speed.  During these tests the laser cut pads are cut out as part of the box for a apples-to-apples comparison, but material can be saved by cutting the pads while cutting the base as shown below:
+
+<Picture src={base_with_pads} formats={['webp']} alt="Gridfinity Baseplate Plan" height="200"/>
+
+With this setting, the cutting of the base to take longer, but won't use any additional material.  Cutting boxes will then be quicker _and_ use less material. In general, if you are laser cutting Gridfinity bases this is the best option.
+
+## Compatibility Notes
+
+3D printed and laser cut Gridfinity boxes and bases are compatible.  However, when stacking
+compability isn't 100% perfect.
+
+Both laser cut and 3d printed boxes are the same height.  A standard 6u box is 42mm and a rounded stacking lip will add about 3.69mm (total 45.69mm).  However, a laser cut base will be 3mm tall but a 3D printed base will be about 4.65mm.  Because a laser cut base and box cannot stair-step, the walls of the laser cut box need to be set based on the thickness of the base.
+
+
+- 3D printed boxes can only go on top of other 3D printed boxes.
+- Laser cut boxes can go on top of either 3D printed or laser cut boxes.
+- With a laser cut base, a stack of boxes will be the correct height regardless of if the box is 3D printed or laser cut.
+- With a 3D printed base, laser cut boxes will stand about 1.65mm taller than 3D printed boxes.
+    
+Therefore, when laser cutting a box, it's dimensions need to be set based on the type of base being used.
+
+## Links
+
+- [Gridfinity 3D Print Box Generator](https://gridfinity.perplexinglabs.com/) for 3D Printer
+- [Gridfinity Laser Box Generator](https://boxes.hackerspace-bamberg.de/GridfinityTrayLayout?language=en) for Laser Cutter
+- [Gridfinity Specification Details](https://www.printables.com/model/417152-gridfinity-specification)
+- [Gridfinity 3D Print Base Generator](https://gridfinitygenerator.com/en/baseplate)
+
+## Implementation
+
+WORK IN PROGRESS
+
+The standard Gridfinity baseplate is 42mm by 42mm square with, multiple outside fillets on the stair-stepped walls.
+
+<Picture src={baseplate_plan} formats={['webp']} alt="Gridfinity Baseplate Plan" height="200"/>
+
+Because laser cutting can only cut in two-dimensions, it's impossible to create the stair-step. Since the wood being used is approximately 3mm thick, when cutting Gridfinity bases the proper dimensions are based on the size approximately 3mm up (the red line in the picture below).
+
+<Picture src={baseplate_profile} formats={['webp']} alt="Gridfinity Baseplate Profile" height="200"/>
+
+This would indicate that the proper sized opening should be about a fillet of 2mm, which means an opening cut of 38mm (i.e. `42mm - (R4mm * 2) + (R2mm * 2))`) will fit the box.
