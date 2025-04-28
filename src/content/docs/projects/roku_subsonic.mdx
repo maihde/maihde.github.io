@@ -1,0 +1,118 @@
+---
+title: Roku Subsonic
+description: A Roku-based front-end for the Subsonic music streamer
+---
+import { Picture } from 'astro:assets';
+import home_screen from '../../../assets/roku_subsonic/home_screen.jpg'
+import browse_albums from '../../../assets/roku_subsonic/browse_albums.jpg'
+import browse_artist from '../../../assets/roku_subsonic/browse_artist.jpg'
+import search_results from '../../../assets/roku_subsonic/search_results.jpg'
+import search from '../../../assets/roku_subsonic/search.jpg'
+import springboard from '../../../assets/roku_subsonic/springboard.jpg'
+
+**This project is deprecated and no longer works with recent Roku devices**
+
+## Introduction
+
+This software is a Roku front-end to the [Subsonic](https://subsonic.org) media streaming server.  It
+provides the following features:
+ * Browse your entire catalog
+ * Search for artists, albums, songs
+ * Full catalog shuffle playback
+ * Quick browse of Subsonic album lists (Random, Recent, Top Rated, etc.)
+
+ Tested on Roku firmware versions 2.9 and 3.0.
+
+ "Roku Subsonic" is open-source software licensed under the [GPL](http://www.gnu.org/copyleft/gpl.html)
+
+ ## Screenshots
+
+The Home Screen provides quick access to Subsonic's dynamic playlists.
+
+<Picture src={home_screen} formats={['webp']} alt="Home Screen" height="200"/>
+
+Browse your entire collection
+
+<Picture src={browse_albums} formats={['webp']} alt="Browse Albums" height="200"/>
+ 
+<Picture src={browse_artist} formats={['webp']} alt="Browse Albums" height="200"/>
+
+
+Access Subsonic's powerful search
+
+<Picture src={search} formats={['webp']} alt="Search" height="200"/>
+
+<Picture src={search_results} formats={['webp']} alt="Search" height="200"/>
+
+
+And of course, actually listen to your music!
+
+<Picture src={springboard} formats={['webp']} alt="Springboard" height="200"/>
+
+## Release Notes
+
+### 1.10.0 - 14th Mar 2015
+* Final Relase
+
+### 1.9.0 - 26th Feb 2015
+
+### 1.8.0 - 17th Jan 2015
+
+### 1.7.0 - 4th Mar 2012
+
+### 1.6.0 - 10th Jan 2011
+* Fix bug that prevents the channel from working if a wrong username/password has been entered
+* Fix bug where the back button does not work on the track-playback screen or the "Show Queue" screen
+
+### 1.5.0 - 9th Jan 2011
+* Fix bug that prevent leaving the Configuration Screen when an invalid server parameters are entered
+* Fix memory leak that could occur if the main screen is left running continuously
+* Fix bug that prevented the main screen background updaters from working correctly in all instances
+* Add support to show the "Now Playing" list
+*Show artist in description area of main screen
+
+### 1.4.0 - 7th Jan 2011
+* Add support for playback of playlists (both as-is and shuffled) - You can press the play button to bypass the springboard
+* Show album ratings on main screen
+* Pressing up on search results returns back to main screen
+* Improve speed by building URLs with cached values instead of reading the registry
+* Deal with loss of server connection while program is running
+* Reload main screen (in background) so that lists stay up to date
+
+### 1.3.0 - 19th Nov 2011
+* Request properly scaled images from the Subsonic server to avoid slow response when viewing folders (artists) with a large number of albums
+* Change browse icon to prepare for 1.4.0 support for "Now Playing" icon
+* Fix bug when setting username/password
+
+### 1.2.0 - 28th Sep 2011
+* Searches that return no results display a message instead of an empty results screen
+* Improved the functionality of "Test Connection" on settings screen
+* Auto-test the connectivity to the server on startup
+* Port 4040 is used by default unless a port is specified for the server address setting
+* Screensaver shows album art when playing music
+* Pressing the "back" button on the remote takes you to the start of the song; pressing again takes you back to the previous song (i.e. CD-player functionality)
+
+### 1.1.0 - 9th July 2011
+
+* Fix issue where "Play Queue" screen did not show album/artist information
+* Display progress bar while playing songs
+* Add Next/Prev buttons to the playback screen menu (remote left/right arrows retain the same behavior for skipping as in 1.0 release)
+* Remove the star-rating item from the playback screen since Subsonic doesn't provide support for that over the API
+* Added extra guidance to the server address configuration screen
+* Reduce the number of shuffled songs to fetch at one time to 20 instead of 100.  This improves response times when selecting shuffle
+
+### 1.0.0 - 29th May 2011
+
+* First published release
+* Provided basic functionality including:
+* Ability to browse and play albums from your music collection
+* Continuous shuffle of your entire music collection
+* Search your collection for artists, albums, and songs
+* Quick access to subsonic album lists (Random, Recent, Top Rated, etc.)
+
+## Credits
+Icons from Emre Ozcelik's ["Elegant Blue Web"](http://www.iconfinder.com/search/?q=iconset%3Aellegant) icon set.
+
+## Developers
+Follow the development at http://www.github.com/maihde/roku_subsonic
+
