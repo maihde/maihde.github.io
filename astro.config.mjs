@@ -7,7 +7,7 @@ export default defineConfig({
 	site: 'https://maihde.github.io',
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'RandomWalking',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			favicon: '/favicon.ico',
 			sidebar: [
